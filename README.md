@@ -10,25 +10,25 @@
 
 ## How TO RUN THE APPLICATION
 1. ### RUN THE `mvn` COMMAND ON YOUR TERMINAL
-``bash
+```bash
 mvn spring-boot:run
-``
+```
 
 2. ### ACCESS THE APPLICATION ON THE WEB BROWSER
-``bash
+```bash
 http://localhost:8080
-``
+````
 
 ## BUILD `.jar` TO CREATE DEPLOYABLE APP
 
 1. ### RUN THIS `mvn` COMMAND TO CREATE THE DEPLOYABLE APP
 
-``bash
+```bash
 mvn clean package
-``
+```
 
 2. ### RUN THIS COMMAND
 
-``bash
+```bash
 java -jar target/netflix-clone-1.0.jar
-``
+````
