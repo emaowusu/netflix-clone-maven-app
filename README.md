@@ -30,5 +30,21 @@ mvn clean package
 2. ### RUN THIS COMMAND
 
 ```bash
-java -jar target/netflix-clone-1.0.jar
+java -jar target/netflix_clone_app-0.0.1-SNAPSHOT.jar
 ````
+
+3. ### REMOVE THE DEPLOYABLE APP
+```bash
+mvn clean
+```
+
+## DOCKERIZE THE APPLICATION
+
+```bash
+# Build the image
+docker build -t springboot-tomcat-app .
+```
+```bash
+# Run container (read-only)
+docker run -d --name myapp -p 8080:8080 --read-only springboot-tomcat-app
+```
