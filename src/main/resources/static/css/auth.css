@@ -1,0 +1,153 @@
+/* General body and background */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/images/header-image.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the form */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Form card */
+.auth-form {
+    background-color: rgba(0,0,0,0.85);
+    padding: 40px 30px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Logo */
+.auth-form .logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* Buttons */
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.auth-form button:hover {
+    background-color: #f6121d;
+    transform: scale(1.03);
+}
+
+/* Links */
+.auth-form a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Headings */
+.auth-form h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+    .auth-form {
+        padding: 30px 20px;
+    }
+    .auth-form h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* Container for centering the form */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/header-image.png') no-repeat center center/cover;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Form styling */
+.auth-form {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    color: #fff;
+    width: 350px;
+    text-align: center;
+}
+
+/* Inputs */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Buttons */
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.auth-form button:hover {
+    background-color: #f6121d;
+}
+
+/* Links */
+.auth-form a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.auth-form h1 {
+    margin-bottom: 20px;
+}

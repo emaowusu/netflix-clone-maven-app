@@ -1,0 +1,23 @@
+services:
+  app:
+    image: springboot-tomcat-app
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    read_only: true
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/mydb
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: pass
+  db:
+    image: mysql:8.1
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:

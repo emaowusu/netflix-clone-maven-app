@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <form class="auth-form" method="post" th:action="@{/login}">
+
+        <img th:src="@{/images/logo.png}" class="logo">
+
+        <h1>Sign In</h1>
+
+        <input type="text" name="username" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+
+        <button type="submit">Login</button>
+
+        <p>
+            New to Netflix?
+            <a th:href="@{/register}">Register now</a>
+        </p>
+
+    </form>
+
+</div>
+
+</body>
+</html>

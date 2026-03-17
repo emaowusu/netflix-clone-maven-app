@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; background: #111; color: #fff; padding: 30px; }
+        .movie-card { display: inline-block; margin: 10px; text-align: center; }
+        .movie-card img { width: 150px; border-radius: 8px; }
+        .redis-msg { margin-top: 20px; color: #0f0; font-weight: bold; }
+        .status-indicator {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+ .logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.logout-btn i {
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    background: #b20710;
+}
+    </style>
+</head>
+<body>
+
+<div class="user-info">
+    Welcome, <span sec:authentication="name"></span>
+</div>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+</form>
+
+<h1>Movies (Redis + Database)</h1>
+
+<div class="status-indicator">
+    <span th:text="${source == 'DATABASE' ? '🟥 Loaded from Database' : '🟩 Loaded from Redis Cache'}"></span>
+</div>
+
+<div th:text="${redisMessage}" class="redis-msg"></div>
+
+<div class="movies">
+    <div class="movie-card" th:each="movie : ${movies}">
+        <img th:src="@{${movie.imageUrl}}" alt="Movie Image">
+        <h3 th:text="${movie.title}">Movie Title</h3>
+        <p th:text="${movie.description}">Movie Description</p>
+    </div>
+</div>
+</body>
+</html>
